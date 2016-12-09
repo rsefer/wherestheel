@@ -16,12 +16,17 @@ class PagesController < ApplicationController
       arrivals = json.decode(response.body)['ctatt']['eta']
       @dir1Arrivals = []
       @dir5Arrivals = []
-      arrivals.each do |arrival|
-        if arrival['trDr'] == '1'
-          @dir1Arrivals.push(arrival)
-        elsif arrival['trDr'] == '5'
-          @dir5Arrivals.push(arrival)
+      if arrivals.present?
+        arrivals.each do |arrival|
+          if arrival['trDr'] == '1'
+            @dir1Arrivals.push(arrival)
+          elsif arrival['trDr'] == '5'
+            @dir5Arrivals.push(arrival)
+          end
         end
+        @stationTitle = @dir1Arrivals.first['staNm']
+      else
+        get_station_from_json(params[:id])
       end
     end
 

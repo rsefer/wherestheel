@@ -2,13 +2,19 @@
   <div class="direction">
     <h2 class="direction-name">Northbound</h2>
     <div class="arrivals-list">
-      <% @dir1Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end %>
+      <% if @dir1Arrivals.present?
+        @dir1Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end
+        else %><%= no_trains_message %><%
+      end %>
     </div>
   </div>
   <div class="direction">
     <h2 class="direction-name">Southbound</h2>
     <div class="arrivals-list">
-      <% @dir5Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end %>
+      <% if @dir5Arrivals.present?
+        @dir5Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end
+        else %><%= no_trains_message %><%
+      end %>
     </div>
   </div>
 </section>

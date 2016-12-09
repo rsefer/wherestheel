@@ -1,24 +1,21 @@
 <header>
   <h1><%= link_to root_path do %><%
-      if action_name == 'station'
-        if @dir1Arrivals.present?
-          if params[:id] == '40850'
-            stationTitle = 'Harold Wash. Library<div class="station-subtitle">State/Van Buren</div>'
-          elsif params[:id] == '41670'
-            stationTitle = 'Conservatory<div class="station-subtitle">/ Central Park Drive</div>'
-          elsif params[:id] == '40670'
-            stationTitle = 'Western<div class="station-subtitle">O\'Hare Branch</div>'
-          elsif params[:id] == '40220'
-            stationTitle = 'Western<div class="station-subtitle">Forest Park Branch</div>'
-          else
-            stationTitle = @dir1Arrivals.first['staNm']
-          end
-        %><%= stationTitle.html_safe %>
-        <% end
-      %><%
+    if action_name == 'station'
+      if params[:id] == '40850'
+        stationTitle = 'Harold Wash. Library<div class="station-subtitle">State/Van Buren</div>'
+      elsif params[:id] == '41670'
+        stationTitle = 'Conservatory<div class="station-subtitle">/ Central Park Drive</div>'
+      elsif params[:id] == '40670'
+        stationTitle = 'Western<div class="station-subtitle">O\'Hare Branch</div>'
+      elsif params[:id] == '40220'
+        stationTitle = 'Western<div class="station-subtitle">Forest Park Branch</div>'
       else
-      %><%= site_title %><%
+        stationTitle = @stationTitle
       end
-    %><% end
+      %><%= stationTitle.html_safe %><%
+    else
+    %><%= site_title %><%
+    end
+  %><% end
   %></h1>
 </header>

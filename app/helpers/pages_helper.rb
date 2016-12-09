@@ -13,4 +13,8 @@ module PagesHelper
     round_time_to_minutes(Time.parse(arrivalTime) - Time.now)
   end
 
+  def no_trains_message
+    '<p>No Trains Available</p>'.html_safe
+  end
+
 end
