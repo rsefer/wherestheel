@@ -1,0 +1,109 @@
+html,
+body {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+header {
+
+  text-align: center;
+
+  h1 {
+
+    line-height: 1;
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+
+    .station-subtitle {
+      font-size: 0.5em;
+    }
+
+  }
+
+}
+
+.station-arrivals {
+
+  text-align: center;
+
+  .direction-name {
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+}
+
+.arrival {
+
+  padding: 1rem;
+  color: $white;
+
+  &[data-route-code="Red"] {
+    background: $red;
+  }
+
+  &[data-route-code="Blue"] {
+    background: $blue;
+  }
+
+  &[data-route-code="Brn"] {
+    background: $brown;
+  }
+
+  &[data-route-code="G"] {
+    background: $green;
+  }
+
+  &[data-route-code="Org"] {
+    background: $orange;
+  }
+
+  &[data-route-code="P"],
+  &[data-route-code="Pexp"] {
+    background: $purple;
+  }
+
+  &[data-route-code="Pink"] {
+    background: $pink;
+  }
+
+  &[data-route-code="Y"] {
+    background: $yellow;
+  }
+
+  &:first-child {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .arrival-time-diff,
+  .arrival-time {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .arrival-time {
+    display: none;
+  }
+
+  &.active,
+  &:not(.active):hover {
+
+    .arrival-time {
+
+      display: inline-block;
+
+      &:before {
+        content: '\2022';
+        margin: 0px 0.375rem;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,15 @@
+<section class="station-arrivals">
+  <div class="direction">
+    <h2 class="direction-name">Northbound</h2>
+    <div class="arrivals-list">
+      <% @dir1Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end %>
+    </div>
+  </div>
+  <div class="direction">
+    <h2 class="direction-name">Southbound</h2>
+    <div class="arrivals-list">
+      <% @dir5Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end %>
+    </div>
+  </div>
+</section>
+Now: <%= Time.now %>
