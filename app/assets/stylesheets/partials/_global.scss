@@ -158,23 +158,27 @@ footer {
 
 .nearest-station-wrap {
 
+  margin: 1rem 0px;
   text-align: center;
 
   .finding-nearest-station {
 
+    position: relative;
+    display: inline-block;
+
     &:before {
       @extend %icon;
-      content: '\2022';
-      top: 3px;
-      left: -1.5em;
+      position: absolute;
+      content: ' ';
+      top: 50%;
+      left: -1rem;
+      transform: translate(-50%, -50%);
       margin: 0px;
-      background: none;
+      background: $black;
+      border-radius: 50px;
       font-size: 1em;
       line-height: 1em;
-      animation-name: pulse;
-      animation-duration: 1000ms;
-      animation-fill-mode: both;
-      animation-iteration-count: infinite;
+      animation: pulse 1000ms infinite;
     }
 
   }
