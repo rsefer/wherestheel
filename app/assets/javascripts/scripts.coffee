@@ -11,22 +11,22 @@ updateArrivals = ->
         thisList = $(this)
         setTimeout (->
           thisList.addClass 'updated'
-          return
         ), 1000
-        return
       setTimeout (->
         $('.arrivals-list.old').remove()
         $('.arrivals-list-wrap').css('height', '')
-        return
       ), 3000
-  return
 
 jQuery(document).ready ($) ->
+
+  $('.route-title').click ->
+    if $(this).parent().hasClass('active')
+      $(this).parent().removeClass 'active'
+    else
+      $(this).parent().addClass 'active'
+      $('html, body').animate { scrollTop: $(this).offset().top }, 300
 
   if $('body').hasClass('station')
     setInterval updateArrivals, 30 * 1000
     $('.arrival').click ->
       $(this).toggleClass 'active'
-      return
-    return
-  return
