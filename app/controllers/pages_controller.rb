@@ -34,7 +34,7 @@ class PagesController < ApplicationController
         end
         @stationTitle = @dir1Arrivals.first['staNm']
       else
-        get_station_from_json(params[:id])
+        @stationTitle = Station.where(map_id: params[:id]).first.name
       end
     end
 
