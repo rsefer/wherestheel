@@ -9,5 +9,8 @@ Bundler.require(*Rails.groups)
 module Wherestheel
   class Application < Rails::Application
     config.time_zone = 'America/Chicago'
+    config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+      r301 %r{^/(.*)/$}, '/$1'
+    end
   end
 end
