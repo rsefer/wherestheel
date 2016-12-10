@@ -73,47 +73,52 @@ header {
 
 }
 
+[data-route-code="Red"] {
+  background: $red;
+}
+
+[data-route-code="Blue"] {
+  background: $blue;
+}
+
+[data-route-code="Brn"] {
+  background: $brown;
+}
+
+[data-route-code="G"] {
+  background: $green;
+}
+
+[data-route-code="Org"] {
+  background: $orange;
+}
+
+[data-route-code="P"],
+[data-route-code="Pexp"] {
+  background: $purple;
+}
+
+[data-route-code="Pink"] {
+  background: $pink;
+}
+
+[data-route-code="Y"] {
+  color: $black;
+  background: $yellow;
+}
+
 .arrival {
 
   position: relative;
   padding: 1rem;
   color: $white;
 
+  &[data-route-code="Y"] {
+    color: $black;
+  }
+
   &:first-child:not(:last-child) {
     border-bottom: 1px solid transparentize($black, 0.8);
-  }
-
-  &[data-route-code="Red"] {
-    background: $red;
-  }
-
-  &[data-route-code="Blue"] {
-    background: $blue;
-  }
-
-  &[data-route-code="Brn"] {
-    background: $brown;
-  }
-
-  &[data-route-code="G"] {
-    background: $green;
-  }
-
-  &[data-route-code="Org"] {
-    background: $orange;
-  }
-
-  &[data-route-code="P"],
-  &[data-route-code="Pexp"] {
-    background: $purple;
-  }
-
-  &[data-route-code="Pink"] {
-    background: $pink;
-  }
-
-  &[data-route-code="Y"] {
-    background: $yellow;
   }
 
   &:first-child {
