@@ -219,6 +219,7 @@ footer {
     padding: 1rem;
     color: $white;
     text-align: center;
+    user-select: none;
 
     &:hover {
       cursor: pointer;
@@ -316,6 +317,7 @@ footer {
   position: relative;
   padding: 1rem;
   color: $white;
+  user-select: none;
 
   &:first-child:not(:last-child),
   &.approaching:not(:last-child) {
