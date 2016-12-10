@@ -19,7 +19,7 @@
 
   </script>
 </head>
-<body>
+<body class="<%= action_name %>"<% if action_name == 'station' %> data-station-id="<%= params[:id] %>"<% end %>>
 <%= render :partial => 'layouts/header' %>
 <%= yield %>
 </body>

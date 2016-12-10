@@ -1,0 +1,3 @@
+$('.direction-1 .arrivals-list.old:first').before("<div class=\"arrivals-list new\"><%= raw escape_javascript( render :partial => 'pages/arrivals_list', :locals => { :directionArrivals => @dir1Arrivals } ).html_safe %></div>")
+$('.direction-5 .arrivals-list.old:first').before("<div class=\"arrivals-list new\"><%= raw escape_javascript( render :partial => 'pages/arrivals_list', :locals => { :directionArrivals => @dir5Arrivals } ).html_safe %></div>")
+$('.time-refresh-content').html("<%= raw escape_javascript( render :partial => 'pages/time_refresh' ).html_safe %>")

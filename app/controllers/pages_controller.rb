@@ -1,10 +1,18 @@
 class PagesController < ApplicationController
-  before_action :get_station_arrivals, only: [:station]
+  before_action :get_station_arrivals, only: [:station, :update_station_arrivals]
 
   def index
   end
 
   def station
+  end
+
+  def update_station_arrivals
+    @dir1Arrivals = @dir1Arrivals
+    @dir5Arrivals = @dir5Arrivals
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

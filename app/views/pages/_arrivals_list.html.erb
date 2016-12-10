@@ -1,0 +1,5 @@
+<% if directionArrivals.present? %>
+<%= render :partial => 'arrival', :collection => directionArrivals %>
+<% else %>
+<%= no_trains_message %>
+<% end %>

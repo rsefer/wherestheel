@@ -1,3 +1,3 @@
 <div class="arrival" data-route-code="<%= arrival['rt'] %>">
-  <div class="arrival-time-diff"><%= time_display(arrival['arrT']) %></div><div class="arrival-time"><%= Time.parse(arrival['arrT']).strftime("%l:%M%P") %></div>
+  <div class="arrival-time-diff"><%= minutes_to_arrival_display(arrival['arrT']) %></div><div class="arrival-time"><%= time_display(Time.parse(arrival['arrT'])) %></div>
 </div>

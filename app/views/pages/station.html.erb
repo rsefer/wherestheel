@@ -1,21 +1,21 @@
-<section class="station-arrivals">
-  <div class="direction">
-    <h2 class="direction-name">Northbound</h2>
-    <div class="arrivals-list">
-      <% if @dir1Arrivals.present?
-        @dir1Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end
-        else %><%= no_trains_message %><%
-      end %>
+<section class="station-arrivals-wrap">
+  <div class="station-arrivals">
+    <div class="direction direction-1">
+      <h2 class="direction-name">Northbound</h2>
+      <div class="arrivals-list-wrap">
+        <div class="arrivals-list">
+          <%= render :partial => 'arrivals_list', :locals => { :directionArrivals => @dir1Arrivals } %>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="direction">
-    <h2 class="direction-name">Southbound</h2>
-    <div class="arrivals-list">
-      <% if @dir5Arrivals.present?
-        @dir5Arrivals.each do |arrival| %><%= render :partial => 'arrival', :locals => { :arrival => arrival } %><% end
-        else %><%= no_trains_message %><%
-      end %>
+    <div class="direction direction-5">
+      <h2 class="direction-name">Southbound</h2>
+      <div class="arrivals-list-wrap">
+        <div class="arrivals-list">
+          <%= render :partial => 'arrivals_list', :locals => { :directionArrivals => @dir5Arrivals } %>
+        </div>
+      </div>
     </div>
+    <div class="time-refresh-content"><%= render :partial => 'time_refresh' %></div>
   </div>
 </section>
-Now: <%= Time.now %>
