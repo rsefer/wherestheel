@@ -19,6 +19,17 @@ updateArrivals = ->
 
 jQuery(document).ready ($) ->
 
+  $('.get-nearest-link').click ->
+    if navigator.geolocation
+      $('.nearest-station-wrap p').html('<div class="finding-nearest-station">Finding Nearest Station...</div>')
+      navigator.geolocation.getCurrentPosition ((position) ->
+        $.ajax
+          url: '/find_nearest_station?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude
+          complete: ->
+            console.log 'complete'
+      ), (error) ->
+        $('.nearest-station-wrap p').html('Unable to find location.')
+
   $('.route-title').click ->
     if $(this).parent().hasClass('active')
       $(this).parent().removeClass 'active'

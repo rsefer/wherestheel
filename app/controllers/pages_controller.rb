@@ -15,6 +15,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def find_nearest_station
+    user_location = [params[:lat].to_f, params[:lng].to_f]
+    nearest = Station.near(user_location, 1, :units => :mi).limit(1)
+    @nearestStation = nearest.first
+  end
+
   private
     def get_station_arrivals
       max = 10

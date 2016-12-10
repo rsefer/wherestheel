@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro', '~> 1.1.1'
 gem 'httparty', '~> 0.14.0'
 gem 'normalize-rails'
+gem 'geocoder', '~> 1.4.1'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

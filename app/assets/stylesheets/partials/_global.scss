@@ -5,6 +5,29 @@ body {
   font-weight: 300;
 }
 
+a {
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+%icon {
+  display: inline-block;
+  content: ' ';
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: {
+    size: contain;
+    position: center center;
+    repeat: no-repeat;
+  }
+}
+
 header {
 
   text-align: center;
@@ -15,13 +38,28 @@ header {
 
     a {
       color: $black;
-      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+
     }
 
     .station-subtitle {
       font-size: 0.5em;
     }
 
+  }
+
+}
+
+footer {
+
+  text-align: center;
+  font-size: 0.75rem;
+
+  a {
+    color: $black;
   }
 
 }
@@ -118,10 +156,66 @@ header {
 
 }
 
+.nearest-station-wrap {
+
+  text-align: center;
+
+  .finding-nearest-station {
+
+    &:before {
+      @extend %icon;
+      content: '\2022';
+      top: 3px;
+      left: -1.5em;
+      margin: 0px;
+      background: none;
+      font-size: 1em;
+      line-height: 1em;
+      animation-name: pulse;
+      animation-duration: 1000ms;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+    }
+
+  }
+
+  a {
+
+    &,
+    &:visited {
+      color: $black;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.get-nearest-link,
+    &.nearest-station {
+
+      position: relative;
+
+      &:before {
+        @extend %icon;
+        position: absolute;
+        left: -1.25em;
+        top: 1px;
+        margin: 0px;
+        width: 1em;
+        height: 1em;
+        background-image: url($marker);
+      }
+
+    }
+
+  }
+
+}
+
 .route {
 
   .route-title {
-    
+
     padding: 1rem;
     color: $white;
     text-align: center;
@@ -149,8 +243,23 @@ header {
     list-style-type: none;
 
     li {
+
       margin: 0.25rem 0px;
       font-size: 1.25rem;
+
+      &:before {
+        @extend %icon;
+        background-image: url($track);
+      }
+
+      &.airport:before {
+        background-image: url($plane);
+      }
+
+      &.transfer:before {
+        background-image: url($transfer);
+      }
+
     }
 
   }
@@ -169,13 +278,16 @@ header {
   hr {
 
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.25rem;
+    height: 1px;
     border: 0px;
-    border-top: 1px solid transparentize($grey, 0.5);
+    background: transparentize($grey, 0.5);
 
     &:after {
-      margin-top: 0.25rem;
-      margin-left: 1rem;
+      position: absolute;
+      display: block;
+      margin-top: 0.75rem;
+      margin-left: 1.5rem;
       color: $grey;
       font-size: 0.75rem;
       font-weight: 500;
@@ -205,6 +317,7 @@ header {
   padding: 1rem;
   color: $white;
 
+  &:first-child:not(:last-child),
   &.approaching:not(:last-child) {
     border-bottom: 1px solid transparentize($black, 0.8);
   }
@@ -241,4 +354,8 @@ header {
 
   }
 
+}
+
+.as-of {
+  margin-bottom: 0px;
 }
