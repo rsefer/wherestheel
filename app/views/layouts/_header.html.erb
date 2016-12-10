@@ -10,7 +10,7 @@
       elsif params[:id] == '40220'
         stationTitle = 'Western<div class="station-subtitle">Forest Park Branch</div>'
       else
-        stationTitle = @stationTitle
+        stationTitle = @station.name
       end
       %><%= stationTitle.html_safe %><%
     else

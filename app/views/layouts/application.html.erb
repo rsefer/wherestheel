@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= site_title %></title>
+  <title><% if action_name == 'station' %><%= @station.name %> | <% end %><%= site_title %></title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
   <%= csrf_meta_tags %>
+  <%
+    favicon_name = ''
+    if action_name == 'station'
+      case @station.color
+      when 'Red'
+        favicon_name = 'red'
+      when 'Blue'
+        favicon_name = 'blue'
+      when 'G'
+        favicon_name = 'green'
+      when 'Brn'
+        favicon_name = 'brown'
+      when 'P'
+        favicon_name = 'purple'
+      when 'Y'
+        favicon_name = 'yellow'
+      when 'Pnk'
+        favicon_name = 'pink'
+      when 'O'
+        favicon_name = 'orange'
+      else
+        favicon_name = 'grey'
+      end
+    else
+      favicon_name = 'grey'
+    end
+  %>
+  <link rel="apple-touch-icon" href="<%= image_url("favicons/favicon_#{favicon_name}_800.png") %>" />
+  <link rel="shortcut icon" href="<%= image_url("favicons/favicon_#{favicon_name}_200.png") %>" />
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>

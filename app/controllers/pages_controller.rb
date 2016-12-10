@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def station
+    @station = Station.where(map_id: params[:id]).first
   end
 
   def update_station_arrivals
@@ -38,9 +39,6 @@ class PagesController < ApplicationController
             @dir5Arrivals.push(arrival)
           end
         end
-        @stationTitle = @dir1Arrivals.first['staNm']
-      else
-        @stationTitle = Station.where(map_id: params[:id]).first.name
       end
     end
 
