@@ -51,8 +51,12 @@
   </script>
 </head>
 <body class="<%= action_name %>"<% if action_name == 'station' %> data-station-id="<%= params[:id] %>"<% end %>>
+
+<div class="wrapper">
 <%= render :partial => 'layouts/header' %>
 <%= yield %>
 <%= render :partial => 'layouts/footer' %>
+</div>
+
 </body>
 </html>

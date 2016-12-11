@@ -17,6 +17,7 @@ a {
 
 %icon {
   display: inline-block;
+  vertical-align: middle;
   content: ' ';
   margin-right: 0.5rem;
   width: 1rem;
@@ -360,8 +361,173 @@ footer {
 
   }
 
+  &[data-destination="Ashland/63rd"],
+  &[data-destination="63rd Street"],
+  &[data-destination="Cottage Grove"] {
+
+    .arrival-time-diff:before {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.25rem;
+      font-size: 0.5em;
+    }
+
+  }
+
+  &[data-destination="Ashland/63rd"] {
+
+    .arrival-time-diff:before {
+      content: '(to Ashland/63rd)';
+    }
+
+  }
+
+  &[data-destination="63rd Street"] {
+
+    .arrival-time-diff:before {
+      content: '(to 63rd)';
+    }
+
+  }
+
+  &[data-destination="Cottage Grove"] {
+
+    color: $green;
+    background: $grey;
+
+    .arrival-time-diff:before {
+      content: '(to Cottage Grove)';
+    }
+
+  }
+
 }
 
 .as-of {
   margin-bottom: 0px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .station .wrapper {
+    margin: 0px auto;
+    width: 768px;
+  }
+
+  .route-list {
+
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .yellow-orange {
+
+      order: 1;
+      width: 33%;
+
+      .route {
+        width: 100%;
+      }
+
+    }
+
+    .route {
+
+      width: 25%;
+
+      &[data-route-code="Red"],
+      &[data-route-code="Brn"] {
+        width: 33.33%;
+      }
+
+      &[data-route-code="Red"] {
+        order: 2;
+      }
+
+      &[data-route-code="Brn"] {
+        order: 3;
+      }
+
+      &[data-route-code="G"] {
+        order: 5;
+      }
+
+      &[data-route-code="P"] {
+        order: 6;
+      }
+
+      &[data-route-code="Pink"] {
+        order: 7;
+      }
+
+      &[data-route-code="Blue"] {
+        order: 8;
+      }
+
+      .station-list {
+        display: block;
+      }
+
+      ul li {
+        font-size: 1rem;
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 1100px) {
+
+  .route-list {
+
+    .yellow-orange {
+
+      .divider {
+        margin-top: 0px;
+        break-before: column;
+      }
+
+    }
+
+    .route {
+
+      &[data-route-code="Org"],
+      &[data-route-code="Red"],
+      &[data-route-code="Brn"] {
+
+        .station-list {
+          column-count: 2;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 1700px) {
+
+  .route-list .route {
+
+    .route-title {
+    }
+
+    .station-list {
+      column-count: 2;
+    }
+
+    &[data-route-code="Y"] {
+
+      .station-list {
+        column-count: 1;
+      }
+
+    }
+
+  }
+
 }

@@ -1,3 +1,3 @@
-<div class="arrival<% if minutes_to_arrival_display(arrival['arrT']) == 'Approaching' %> approaching<% end %>" data-route-code="<%= arrival['rt'] %>">
+<div class="arrival<% if minutes_to_arrival_display(arrival['arrT']) == 'Approaching' %> approaching<% end %>" data-route-code="<%= arrival['rt'] %>" data-destination="<%= arrival['destNm'] %>">
   <div class="arrival-time-diff"><%= minutes_to_arrival_display(arrival['arrT']) %></div><div class="arrival-time"><%= time_display(Time.parse(arrival['arrT'])) %></div>
 </div>

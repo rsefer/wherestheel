@@ -13,8 +13,10 @@ updateArrivals = ->
           thisList.addClass 'updated'
         ), 1000
       setTimeout (->
+        $('.arrivals-list-wrap').css('height', 'auto')
+      ), 2000
+      setTimeout (->
         $('.arrivals-list.old').remove()
-        $('.arrivals-list-wrap').css('height', '')
       ), 3000
 
 jQuery(document).ready ($) ->
