@@ -26,8 +26,6 @@ jQuery(document).ready ($) ->
       navigator.geolocation.getCurrentPosition ((position) ->
         $.ajax
           url: '/find_nearest_station?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude
-          complete: ->
-            console.log 'complete'
       ), (error) ->
         $('.nearest-station-wrap').html('Unable to find location.')
 
