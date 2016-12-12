@@ -1,0 +1,13 @@
+<% if @alerts.length > 0 %>
+var content = '<div class="alerts">';
+<% @alerts.each do |alert| %>
+content += '<div class="alert"><%= raw escape_javascript(alert[:description]) %> <a href="<%= raw escape_javascript(alert[:url]) %>">More Information</a></div>';
+<% end %>
+content += '</div>';
+$('header').after(content);
+$('h1').append('<div class="alert-toggle"></div>').promise().done(function() {
+  $('.alert-toggle').click(function() {
+    $('.alerts').toggleClass('active');
+  });
+});
+<% end %>

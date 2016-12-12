@@ -1,9 +1,8 @@
 updateArrivals = ->
   $('.arrivals-list').removeClass('new').addClass 'old'
-  stationID = $('.station').data('station-id')
   $.ajax
-    url: '/update_station_arrivals?id=' + stationID
-    complete: ->
+    url: '/update_station_arrivals?id=' + $('.station').data('station-id')
+    success: ->
       $('.arrivals-list.old').each ->
         oldHeight = $(this).outerHeight()
         $(this).parent().css 'height', oldHeight
@@ -40,6 +39,12 @@ jQuery(document).ready ($) ->
       $('html, body').animate { scrollTop: $(this).offset().top }, 300
 
   if $('body').hasClass('station')
+    $.ajax
+      url: '/display_alerts?id=' + $('.station').data('station-id')
+      success: ->
+        setTimeout (->
+          $('.alert-toggle').addClass 'loaded'
+        ), 500
     setInterval updateArrivals, 30 * 1000
     $('.arrival').click ->
       $(this).toggleClass 'active'

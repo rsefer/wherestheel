@@ -38,10 +38,16 @@ header {
     line-height: 1;
 
     a {
+
       color: $black;
 
       &:hover {
         text-decoration: none;
+      }
+
+      .page-title-inner {
+        display: inline-block;
+        vertical-align: middle;
       }
 
     }
@@ -397,6 +403,70 @@ footer {
 
     .arrival-time-diff:before {
       content: '(to Cottage Grove)';
+    }
+
+  }
+
+}
+
+.alert-toggle {
+
+  @extend %icon;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background-image: url($exclamationYellow);
+  transition: all 600ms;
+
+  &.loaded {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.alerts {
+
+  display: none;
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+
+  &:before,
+  &:after {
+    display: block;
+    content: ' ';
+    height: 0.5rem;
+    background: {
+      image: url($yellowStripes);
+      position: center center;
+      repeat: repeat;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+
+  a {
+    color: $black;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+
+  .alert {
+
+    padding: 1rem 1rem 0px;
+
+    &:last-child {
+      padding-bottom: 1rem;
     }
 
   }

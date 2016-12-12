@@ -1,5 +1,5 @@
 <header>
-  <h1><%= link_to root_path do %><%
+  <h1><%= link_to root_path do %><div class="page-title-inner"><%
     if action_name == 'station'
       if params[:id] == '40850'
         stationTitle = 'Harold Wash. Library<div class="station-subtitle">State/Van Buren</div>'
@@ -16,6 +16,6 @@
     else
     %><%= site_title %><%
     end
-  %><% end
+  %></div><% end
   %></h1>
 </header>
