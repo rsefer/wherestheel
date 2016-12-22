@@ -18,7 +18,7 @@ updateArrivals = ->
         $('.arrivals-list.old').remove()
       ), 3000
 
-jQuery(document).ready ($) ->
+jQuery(document).on 'turbolinks:load', ->
 
   $('.get-nearest-link').click ->
     if navigator.geolocation
