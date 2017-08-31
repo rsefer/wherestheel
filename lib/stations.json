@@ -5698,5 +5698,43 @@
     "Pnk": "false",
     "O": "false",
     "Location": "(41.916157, -87.687364)"
+  },
+  {
+    "STOP_ID": 30384,
+    "DIRECTION_ID": "S",
+    "STOP_NAME": "Washington/Wabash (Inner Loop)",
+    "STATION_NAME": "Washington/Wabash",
+    "STATION_DESCRIPTIVE_NAME": "Washington/Wabash (Brown, Green, Orange, Purple & Pink Lines)",
+    "MAP_ID": 41700,
+    "ADA": "false",
+    "RED": "false",
+    "BLUE": "false",
+    "G": "true",
+    "BRN": "false",
+    "P": "false",
+    "Pexp": "true",
+    "Y": "false",
+    "Pnk": "true",
+    "O": "true",
+    "Location": "(41.88322, -87.626189)"
+  },
+  {
+    "STOP_ID": 30383,
+    "DIRECTION_ID": "N",
+    "STOP_NAME": "Washington/Wabash (Inner Loop)",
+    "STATION_NAME": "Washington/Wabash",
+    "STATION_DESCRIPTIVE_NAME": "Washington/Wabash (Brown, Green, Orange, Purple & Pink Lines)",
+    "MAP_ID": 41700,
+    "ADA": "false",
+    "RED": "false",
+    "BLUE": "false",
+    "G": "true",
+    "BRN": "false",
+    "P": "false",
+    "Pexp": "true",
+    "Y": "false",
+    "Pnk": "true",
+    "O": "true",
+    "Location": "(41.88322, -87.626189)"
   }
 ]
